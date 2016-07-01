@@ -3,7 +3,7 @@ angular
     .module('app.routes', ['ui.router'])
     .config(config)
     .run(function($state) {
-    $state.go('allSongs'); //make a transition to songs state when app starts
+    $state.go('allSongs'); 
 });
 
 function config ($stateProvider) {

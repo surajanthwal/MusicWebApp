@@ -1,20 +1,20 @@
 <link rel="stylesheet" href="assets/css/select.min.css">
 <link rel="stylesheet" href="assets/css/allSongs.css">
 
-<div class="container" >
+<div class="container">
   <div class="row">
-     <div class="col-md-12">
-            <div class="panel panel-primary col-md-6 col-md-offset-3">
-                <h1 style="text-align: center;color: #E9E8E9;">Find your favourite song!!</h1>
-            </div>
-        </div>
+    <div class="col-md-12">
+      <div class="panel panel-primary col-md-6 col-md-offset-3">
+        <h1 style="text-align: center;color: #E9E8E9;">Find your favourite song!!</h1>
+      </div>
+    </div>
   </div>
 
   <div class="row">
     <div class="col-md-4 col-md-offset-4">
-      <div  class="panel">
+      <div class="panel">
         <h1 style="text-align: center;color: #E9E8E9;" ng-if="!song.track.id">Add a song</h1>
-        
+
         <h1 style="text-align: center;color: #E9E8E9;" ng-if="song.track.id">Edit your song</h1>
       </div>
     </div>
@@ -25,92 +25,42 @@
       <div class="panel panel-default">
         <div class="panel-body">
           <div class="table-container">
-          
-            <form name="myForm" ng-submit="song.submit()" novalidate class="form-horizontal" >
-              
+
+            <form name="myForm" ng-submit="song.submit()" novalidate class="form-horizontal">
+
               <div class="form-group">
                 <label for="songTitle" class="control-label col-md-2 labels">Song Title</label>
-              <div class="col-md-10">
-                <input type="text" name="title" class="form-control" id="songTitle" placeholder="Song Title" ng-model="song.track.title" required>
+                <div class="col-md-10">
+                  <input type="text" name="title" class="form-control" id="songTitle" placeholder="Song Title" ng-model="song.track.title" required>
+                </div>
               </div>
-              </div>
-    
+
               <div class="form-group">
                 <label for="Genre" class="control-label col-md-2 labels">Genres</label>
-              <div class="col-md-10">
-                <!-- <input type="text" class="form-control" id="Genres" placeholder="Genres"> -->
-                <div class="form-control" id="Genre">
-                    <ui-select multiple ng-model="song.track.genres" theme="bootstrap" ng-disabled="song.disabled" close-on-select="false" title="Choose a genre" >
-                      <ui-select-match placeholder="Select genre...">{{$item.name}}</ui-select-match>
-                      <ui-select-choices repeat="genre in song.genres | filter:$select.search track by $index ">
-                        {{genre.name}}
-                      </ui-select-choices>
-                    </ui-select>
-                </div>
-              </div>
-              </div>
-
-              <div class="form-group">
-                <label for="Rating" class="control-label col-md-2 labels">Song Rating</label>
-              <div class="col-md-10">
-                <input type="text" name="rating" class="form-control" id="Rating" placeholder="Song rating" ng-model="song.track.rating" required>
-              </div>
-              </div>
-              
-              <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                  <button type="button" class="btn btn-primary" ui-sref="allSongs({currentPage:song.currentPage})">Go Back</button>
-                   <button type="submit" class="btn btn-primary pull-right">Submit</button>
-                </div>
-              </div>
-            </form>
-
-
-
-     <!--        <form name="myForm" action="" method="post" novalidate>
-              
-              <div class="form-group">
-                <div class="col-md-2"> 
-                <label for="songTitle" class="control-label">Song Title</label>
-                </div>
                 <div class="col-md-10">
-                  <input type="text" name="title" class="form-control" id="songTitle" placeholder="Name of Song" ng-model="song.track.title" required>
-                </div>
-              </div>  
-              
-              <div class="form-group">
-                <div class="col-md-2">  
-                <label for="genre" class="control-label">Genres</label>
-                </div>  
-                
-                <div class="col-md-10">
-                  <div class="form-control" id="genre">
-                    <ui-select multiple ng-model="song.genre"  theme="bootstrap" ng-disabled="song.disabled" close-on-select="false" title="Choose a genre" >
+                    <ui-select multiple ng-model="song.track.genres" theme="bootstrap" ng-disabled="song.disabled" close-on-select="false" title="Choose a genre">
                       <ui-select-match placeholder="Select genre...">{{$item.name}}</ui-select-match>
                       <ui-select-choices repeat="genre in song.genres | filter:$select.search track by $index ">
                         {{genre.name}}
                       </ui-select-choices>
                     </ui-select>
                   </div>
-                </div>
               </div>
 
-                
-                
               <div class="form-group">
-                <div class="col-md-2"> 
-                <label for="Rating" class="control-label">Star Rating</label>
-                </div>
+                <label for="Rating" class="control-label col-md-2 labels">Song Rating</label>
                 <div class="col-md-10">
-                  <input type="text" name="rating" class="form-control" id="Rating" placeholder="Rating" ng-model="song.track.rating" required >
-                  <!-- <button type="button" class="btn btn-primary">Primary</button>
-                    <button type="submit" class="btn btn-primary">Submit</button>-->
-                <!-- </div>
+                  <input type="text" name="rating" class="form-control" id="Rating" placeholder="Song rating" ng-model="song.track.rating" required>
+                </div>
               </div>
 
-
-            </form> -->
- 
+              <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                  <button type="button" class="btn btn-primary" ui-sref="allSongs({currentPage:song.currentPage})">Go Back</button>
+                  <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
