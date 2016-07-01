@@ -1,0 +1,58 @@
+<link rel="stylesheet" href="assets/css/select.min.css">
+<link rel="stylesheet" href="assets/css/allSongs.css">
+<!-- <link href="assets/pagination/pagination.css" type="text/css" rel="stylesheet"/> -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-primary col-md-6 col-md-offset-3">
+                <h1 style="text-align: center;color: #E9E8E9;">Find your favourite song!!</h1>
+            </div>
+        </div>
+    </div>
+
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <div style="text-align: center;color: #E9E8E9;">
+        
+        <h3 ng-if="genre.genre.id">Edit Genre</h3>
+      <h3 ng-if="!genre.genre.id"> Add a genre</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="table-container">
+          
+            <form name="myForm" ng-submit="genre.submit()" novalidate class="form-horizontal">
+              
+              <div ng-if="genre.genre.id" class="form-group">
+                <label for="genreId" class="control-label col-md-2 labels">Genre Id</label>
+              <div class="col-md-10">
+                <input  type="text" name="title" class="form-control" id="genreId" placeholder="Genre Id" ng-model="genre.genre.id" disabled required>
+              </div>
+              </div>
+    
+              <div class="form-group">
+                <label for="Genre" class="control-label col-md-2 labels">Genre Name</label>
+              <div class="col-md-10">
+                <!-- <input type="text" class="form-control" id="Genres" placeholder="Genres"> -->
+                <input type="text" name="genreName" class="form-control" id="Genre" placeholder="Genre Name" ng-model="genre.genre.name" required>
+              </div>
+              </div>
+              
+              <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                  <button type="button" class="btn btn-primary" ui-sref="allGenres({currentPage:genre.currentPage})">Go Back</button>
+                   <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

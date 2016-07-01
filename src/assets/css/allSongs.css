@@ -1,0 +1,89 @@
+/*    --------------------------------------------------
+	:: General
+	-------------------------------------------------- */
+
+.content h1 {
+	text-align: center;
+}
+.content .content-footer p {
+	color: #6d6d6d;
+    font-size: 12px;
+    text-align: center;
+}
+.content .content-footer p a {
+	color: inherit;
+	font-weight: bold;
+}
+
+/*	--------------------------------------------------
+	:: Table Filter
+	-------------------------------------------------- */
+
+.ui-filterable .form-control{
+	border: 1px solid #814354;
+background-color: #974C60
+color:#FFFFFF
+}
+.panel {
+	border: 1px solid #ddd;
+	background-color: #50A8B2;
+
+}
+.panel-body{
+	border: 1px solid #ddd;
+	background-color: #50A8B2;
+}
+.table-filter {
+	border-bottom: 1px solid #eee;
+}
+.table-filter tbody tr:hover {
+	cursor: pointer;
+	background-color: #445583;
+}
+.table-filter tbody tr td {
+	padding: 10px;
+	vertical-align: middle;
+	border-top-color: #eee;
+}
+.table-filter tbody tr.selected td {
+	background-color: #eee;
+}
+.table-filter tr td:first-child {
+	width: 38px;
+}
+.table-filter tr td:nth-child(2) {
+	width: 35px;
+}
+.table-filter .star {
+	color: #ccc;
+	text-align: center;
+	display: block;
+}
+
+
+/*.table-filter .media-body {*/
+    /*display: block;*/
+     /*Had to use this style to force the div to expand (wasn't necessary with my bootstrap version 3.3.6) */
+/*}*/
+
+.media .media-body{
+
+}
+.table-filter .media-meta {
+	font-size: 11px;
+	color: #999;
+}
+.table-filter .media .title {
+	color: #2BBCDE;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: normal;
+	margin: 0;
+}
+.table-filter .media .title {
+	font-size: .8em;
+	margin-right: 20px;
+}
+.table-filter .media .title .pagado {
+	color: #5cb85c;
+}

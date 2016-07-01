@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="assets/css/allSongs.css">
+<!-- <link href="assets/pagination/pagination.css" type="text/css" rel="stylesheet"/> -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+           <div class="panel panel-primary col-md-6 col-md-offset-3">
+                <h1 style="text-align: center;color: #E9E8E9;">Find your favourite song!!</h1>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="row">
+        <div class="col-md-12">
+            <h3>Table / Fuzzy search example</h3>
+        </div>
+    </div> -->
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+           
+            <div class=" text-center">
+<h2 style="color: #E9E8E9;">Track's Genres</h2>
+</div>        
+        </div>
+    </div>
+     
+        <div class="row">
+            <div  class="col-md-6 col-md-offset-3">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="table-container">
+                            <table class="table table-filter" id="content" >
+                                <tbody id="myTableBody" >
+                                    <!-- <div ng-if="searchText!=null"><tr class="list-group" ui-sref="oneSong({song:song, songId:song.id})" data-ng-repeat="song in songs.allTracks | filter: searchText"></div> -->
+                                    <tr class="list-group" data-ng-repeat="genre in genres.allGenres" ui-sref="oneGenre({genre:genre, genreId:genre.id, currentPage:genres.bigCurrentPage })" >                  
+                                        <td class="media media-body" data-filter="true" data-input="#search" data-autodividers="true" data-inset="true" ) >
+                                                
+                                                    <span class="media-meta pull-right">{{genre.id}}</span>
+                                                        <i class="glyphicon glyphicon-music"></i>  <h4 style="color: #E9E8E9;" class="title">
+                                                        {{genre.name}}</h4>                                                             
+                                        </td>
+                                    </tr> 
+                                     
+                                                           
+                                </tbody>
+                            </table>
+                            <button type="button" class="btn btn-primary pull-left" ng-click="genres.goBack()" >Go Back</button>
+                            <button type="button" class="btn btn-primary col-md-4 col-md-offset-2" ui-sref="oneGenre({currentPage:genres.bigCurrentPage })"> Add New Genre</button>
+                            <button type="button" class="btn btn-primary pull-right" ui-sref="allSongs" >Home</button>
+                            
+                        </div>
+                    </div>
+                    <ul class="pager">
+                            <li><a ng-click="genres.previousPage()" style="color:white">Previous</a></li>
+                            <li><a ng-click="genres.nextPage()" style="color:white">Next</a></li>
+                        </ul>
+                                                        
+                </div>
+                            
+                                
+        </div>
+    
+</div>
+
